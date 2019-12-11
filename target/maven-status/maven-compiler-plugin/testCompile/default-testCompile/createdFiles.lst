@@ -1,0 +1,8 @@
+pages/CheckOutPage.class
+tests/LoginTest.class
+suite/SuiteManager.class
+pages/AddToCart.class
+pages/HomePage.class
+testdata/logincredentials.class
+pages/BasePage.class
+pages/LoginPage.class

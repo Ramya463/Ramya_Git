@@ -1,30 +1,36 @@
 package tests;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.*;
+import pages.BasePage;
+import pages.HomePage;
+import pages.LoginPage;
 import suite.SuiteManager;
-import testdata.logincredentials;
-import util.DriverManager;
-
-import java.util.concurrent.TimeUnit;
+import util.ConfigFileReader;
 
 public class LoginTest extends SuiteManager {
 
-    @BeforeTest
-    public void get_usr_and_pwd(){
+    public BasePage basePage;
+    public LoginPage loginPage;
+    public HomePage homePage;
+    ConfigFileReader config=new ConfigFileReader();
 
-        //String username=config.getProperty("username");
-        //String password=config.getProperty("password");
+    @Test/*(dataProvider = "logincredentials",dataProviderClass = logincredentials.class)*/
+    public void Login(){
 
-    }
+        basePage =new BasePage();
+        loginPage=basePage.clickLoginButton();
 
-    @Test(dataProvider = "logincredentials",dataProviderClass = logincredentials.class)
-    public void Login(String user_id,String pwd){
 
-        String loginlink="//a[text()='Login']";
+        String user_name=config.getProperty("username");
+        String pword=config.getProperty("password");
+
+        System.out.println(user_name);
+
+       homePage=loginPage.login(user_name,pword);
+
+
+
+        /*String loginlink="//a[text()='Login']";
         String username_txtbox="spree_user_email";
         String password_txtbox="spree_user_password";
 
@@ -35,11 +41,11 @@ public class LoginTest extends SuiteManager {
         DriverManager.driver.findElement(By.xpath(loginlink)).click();
         DriverManager.driver.findElement(By.id(username_txtbox)).sendKeys(user_id);
         DriverManager.driver.findElement(By.id(password_txtbox)).sendKeys(pwd);
-        DriverManager.driver.findElement(By.name(loginbtn_name)).click();
+        DriverManager.driver.findElement(By.name(loginbtn_name)).click();*/
 
     }
 
-    @Test
+   /* @Test
     public void searchitem(){
 
 
@@ -51,7 +57,9 @@ public class LoginTest extends SuiteManager {
 
 
         DriverManager.driver.findElement(By.id(searchbox)).sendKeys(Keys.RETURN);
+        List<WebElement> Product_list=DriverManager.driver.findElements(By.xpath("//div[contains(@id,'product_')]"));
+        System.out.println(Product_list);
 
 
-    }
+    }*/
 }

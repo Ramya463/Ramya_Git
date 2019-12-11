@@ -1,0 +1,10 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 3.895 sec <<< FAILURE!
+Login(tests.LoginTest)  Time elapsed: 0.449 sec  <<< FAILURE!
+java.lang.NullPointerException
+	at pages.LoginPage.enterValue(LoginPage.java:30)
+	at pages.LoginPage.HomePage(LoginPage.java:34)
+	at tests.LoginTest.Login(LoginTest.java:38)
+
