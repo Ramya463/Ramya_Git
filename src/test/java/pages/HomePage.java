@@ -9,7 +9,9 @@ import util.DriverManager;
 import java.util.List;
 
 public class HomePage extends SuiteManager {
-    public void HomePage() {
+
+    public  HomePage() {
+
         PageFactory.initElements(DriverManager.driver, this);
     }
 
@@ -21,6 +23,11 @@ public class HomePage extends SuiteManager {
         int no_of_products=noOfProducts.size();
         System.out.println(no_of_products);
 
+    }
+
+    public AddToCart cartPage(){
+
+        return new AddToCart();
     }
 
 }

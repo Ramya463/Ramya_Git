@@ -1,5 +1,6 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -9,16 +10,17 @@ import util.DriverManager;
 
 public class LoginPage extends SuiteManager {
 
-    public void LoginPage(){
+    public LoginPage(){
 
         PageFactory.initElements(DriverManager.driver,this);
 
     }
 
-    @FindBy(name="spree_user[email]")
-    private WebElement login_user_id;
 
-    @FindBy(name="spree_user[password]")
+    @FindBy(xpath = "//input[@id='spree_user_email']")
+    private WebElement loginUserId;
+
+    @FindBy(xpath = "//input[@id='spree_user_password']")
     private WebElement login_password;
 
     @FindBy(name="commit")
@@ -31,8 +33,8 @@ public class LoginPage extends SuiteManager {
     }
 
     public HomePage login(String username, String password){
-        enterValue(login_user_id,username);
-        enterValue(login_password,password);
+        enterValue(login_password,username);
+       enterValue(login_password,password);
         submit.click();
         return new HomePage();
 

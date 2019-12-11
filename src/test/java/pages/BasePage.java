@@ -15,6 +15,7 @@ public class BasePage extends SuiteManager {
     @FindBy(xpath = "//a[text()='Login']")
     private WebElement loginButton;
 
+
     public LoginPage clickLoginButton(){
         loginButton.click();
         return new LoginPage();

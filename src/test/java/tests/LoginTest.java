@@ -11,7 +11,7 @@ public class LoginTest extends SuiteManager {
 
     public BasePage basePage;
     public LoginPage loginPage;
-    public HomePage homePage;
+    //public HomePage homePage;
     ConfigFileReader config=new ConfigFileReader();
 
     @Test/*(dataProvider = "logincredentials",dataProviderClass = logincredentials.class)*/
@@ -24,9 +24,8 @@ public class LoginTest extends SuiteManager {
         String user_name=config.getProperty("username");
         String pword=config.getProperty("password");
 
-        System.out.println(user_name);
-
-       homePage=loginPage.login(user_name,pword);
+        //System.out.println(user_name);
+       loginPage.login(user_name,pword);
 
 
 
