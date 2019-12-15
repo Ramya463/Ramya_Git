@@ -8,8 +8,20 @@ import util.DriverManager;
 
 public class CheckOutPage extends SuiteManager {
 
-    public void CheckOutPage() {
+    public CheckOutPage() {
         PageFactory.initElements(DriverManager.driver, this);
     }
+
+
+    @FindBy(xpath = "//button[@name='checkout']")
+    private WebElement check_out;
+
+    public void click_checkout(){
+
+        check_out.click();
+
+    }
+
+
 
 }

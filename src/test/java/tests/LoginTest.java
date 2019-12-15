@@ -1,9 +1,7 @@
 package tests;
 
 import org.testng.annotations.*;
-import pages.BasePage;
-import pages.HomePage;
-import pages.LoginPage;
+import pages.*;
 import suite.SuiteManager;
 import util.ConfigFileReader;
 
@@ -11,7 +9,9 @@ public class LoginTest extends SuiteManager {
 
     public BasePage basePage;
     public LoginPage loginPage;
-    //public HomePage homePage;
+    public HomePage homePage;
+    public AddToCart addCartPage;
+    public CheckOutPage checkOut;
     ConfigFileReader config=new ConfigFileReader();
 
     @Test/*(dataProvider = "logincredentials",dataProviderClass = logincredentials.class)*/
@@ -21,11 +21,23 @@ public class LoginTest extends SuiteManager {
         loginPage=basePage.clickLoginButton();
 
 
+
         String user_name=config.getProperty("username");
         String pword=config.getProperty("password");
+        String searchValue=config.getProperty("searchitem");
 
-        //System.out.println(user_name);
-       loginPage.login(user_name,pword);
+       homePage=loginPage.login(user_name,pword);
+       homePage.searchItem(searchValue);
+       homePage.print_noofprod();
+       addCartPage=homePage.cartPage();
+       checkOut=addCartPage.Click_AddtoCart();
+       checkOut.click_checkout();
+
+
+
+
+
+
 
 
 

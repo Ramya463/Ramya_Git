@@ -33,7 +33,7 @@ public class LoginPage extends SuiteManager {
     }
 
     public HomePage login(String username, String password){
-        enterValue(login_password,username);
+        enterValue(loginUserId,username);
        enterValue(login_password,password);
         submit.click();
         return new HomePage();

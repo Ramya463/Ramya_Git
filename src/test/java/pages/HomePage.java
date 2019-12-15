@@ -1,5 +1,7 @@
 package pages;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -15,8 +17,12 @@ public class HomePage extends SuiteManager {
         PageFactory.initElements(DriverManager.driver, this);
     }
 
+
     @FindBy(xpath = "//div[contains(@id,'product_')]")
     private List<WebElement> noOfProducts;
+
+    @FindBy(xpath = "//input[@id='keywords']")
+    private WebElement searchbox;
 
     public void print_noofprod(){
 
@@ -25,7 +31,18 @@ public class HomePage extends SuiteManager {
 
     }
 
+    public void searchItem(String searchValue){
+        searchbox.sendKeys(searchValue);
+        searchbox.sendKeys(Keys.ENTER);
+
+    }
+
+    public void check_products(){
+
+    }
+
     public AddToCart cartPage(){
+        DriverManager.driver.findElement(By.xpath("//span[contains(text(),'Ruby on Rails Bag')]")).click();
 
         return new AddToCart();
     }

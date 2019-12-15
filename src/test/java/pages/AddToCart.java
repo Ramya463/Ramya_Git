@@ -8,15 +8,19 @@ import util.DriverManager;
 
 public class AddToCart extends SuiteManager {
 
-    public void AddToCart() {
+    public AddToCart() {
         PageFactory.initElements(DriverManager.driver, this);
     }
 
-    @FindBy(id="add-to-cart-button")
-    private WebElement add_to_cart;
+   /* @FindBy(xpath = "//button[@id='add-to-cart-button']")
+    private WebElement add_to_cart;*/
+
+
+    @FindBy(xpath = "//button[@id='add-to-cart-button']")
+    private WebElement cart_add;
 
     public CheckOutPage Click_AddtoCart(){
-        add_to_cart.click();
+        cart_add.click();
         return new CheckOutPage();
     }
 }
