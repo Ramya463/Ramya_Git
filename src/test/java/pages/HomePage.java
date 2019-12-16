@@ -5,6 +5,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 import suite.SuiteManager;
 import util.DriverManager;
 
@@ -39,7 +40,16 @@ public class HomePage extends SuiteManager {
 
     public void check_products(){
 
-        List<WebElement> products=DriverManager.driver.findElements(By.xpath(""));
+        List<WebElement> products=DriverManager.driver.findElements(By.xpath("//div[contains(@id,'product_')]"));
+        for (WebElement e:products){
+
+            //Assert.assertEquals(e.getText());
+            if(e.getText().contains("Bag")){
+                System.out.println("This is a bag");
+            }
+            else
+                System.out.println("Not a bag");
+        }
 
     }
 
