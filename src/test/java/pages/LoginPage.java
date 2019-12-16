@@ -26,6 +26,9 @@ public class LoginPage extends SuiteManager {
     @FindBy(name="commit")
     private WebElement submit;
 
+    @FindBy(xpath = "//div[@class='alert alert-success']")
+    private WebElement successMessage;
+
     public void enterValue(WebElement field,String value){
         field.click();
       field.clear();
@@ -36,6 +39,7 @@ public class LoginPage extends SuiteManager {
         enterValue(loginUserId,username);
        enterValue(login_password,password);
         submit.click();
+        System.out.println(successMessage.getText());
         return new HomePage();
 
     }
