@@ -35,43 +35,7 @@ public class LoginTest extends SuiteManager {
        checkOut.click_checkout();//check out of cart items
 
 
-
-
-
-
-
-
-
-        /*String loginlink="//a[text()='Login']";
-        String username_txtbox="spree_user_email";
-        String password_txtbox="spree_user_password";
-
-        String loginbtn_name="commit";
-
-
-
-        DriverManager.driver.findElement(By.xpath(loginlink)).click();
-        DriverManager.driver.findElement(By.id(username_txtbox)).sendKeys(user_id);
-        DriverManager.driver.findElement(By.id(password_txtbox)).sendKeys(pwd);
-        DriverManager.driver.findElement(By.name(loginbtn_name)).click();*/
-
     }
 
-   /* @Test
-    public void searchitem(){
 
-
-        String searchbox="keywords";
-
-        String search_value=config.getProperty("searchitem");
-        System.out.println(search_value);
-        DriverManager.driver.findElement(By.id(searchbox)).sendKeys(search_value);
-
-
-        DriverManager.driver.findElement(By.id(searchbox)).sendKeys(Keys.RETURN);
-        List<WebElement> Product_list=DriverManager.driver.findElements(By.xpath("//div[contains(@id,'product_')]"));
-        System.out.println(Product_list);
-
-
-    }*/
 }
