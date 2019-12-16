@@ -39,6 +39,8 @@ public class HomePage extends SuiteManager {
 
     public void check_products(){
 
+        List<WebElement> products=DriverManager.driver.findElements(By.xpath(""));
+
     }
 
     public AddToCart cartPage(){
