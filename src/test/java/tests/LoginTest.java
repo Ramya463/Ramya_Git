@@ -29,7 +29,7 @@ public class LoginTest extends SuiteManager {
        homePage=loginPage.login(user_name,pword);//logging in with username and password
        homePage.searchItem(searchValue);//Search using a keyword
        homePage.print_noofprod();//Printing number of products
-       homePage.check_products();//validating the products
+       homePage.check_products(searchValue);//validating the products
        addCartPage=homePage.cartPage();//getting the cart page
        checkOut=addCartPage.Click_AddtoCart();//clicking on add cart and move to cart details page
        checkOut.click_checkout();//check out of cart items
