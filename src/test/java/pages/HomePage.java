@@ -39,16 +39,11 @@ public class HomePage extends SuiteManager {
     }
 
     public void check_products(String searchValue){
+        Boolean status;
 
         List<WebElement> products=DriverManager.driver.findElements(By.xpath("//div[contains(@id,'product_')]"));
         for (WebElement e:products){
-
-            //Assert.assertEquals(e.getText());
-            if(e.getText().contains(searchValue)){
-                System.out.println("This is a "+ searchValue);
-            }
-            else
-                System.out.println("Not a bag");
+            Assert.assertTrue(e.getText().contains(searchValue));
         }
 
     }
