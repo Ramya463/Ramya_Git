@@ -39,7 +39,6 @@ public class HomePage extends SuiteManager {
     }
 
     public void check_products(String searchValue){
-        Boolean status;
 
         List<WebElement> products=DriverManager.driver.findElements(By.xpath("//div[contains(@id,'product_')]"));
         for (WebElement e:products){
